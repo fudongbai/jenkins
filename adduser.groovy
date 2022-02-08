@@ -14,7 +14,7 @@ def instance = Jenkins.getInstance()
 instance.setSecurityRealm(hudsonRealm)
 instance.save()
 
-def strategy = new hudson.security.GlobalMatrixAuthorizationStrategy()
+def strategy = new GlobalMatrixAuthorizationStrategy()
 
 // Slave Permissions
 strategy.add(hudson.model.Computer.BUILD,'fudongbai')

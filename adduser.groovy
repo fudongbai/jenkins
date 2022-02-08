@@ -1,9 +1,8 @@
 import jenkins.*
+import jenkins.model.*
 import hudson.*
 import hudson.model.*
-import jenkins.model.*
 import hudson.security.*
-import hudson.security.GlobalMatrixAuthorizationStrategy
 
 def hudsonRealm = new HudsonPrivateSecurityRealm(false)
 def adminUsername = System.getenv('JENKINS_ADMIN_USERNAME') ?: 'admin'

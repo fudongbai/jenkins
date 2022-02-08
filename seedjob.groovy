@@ -1,38 +1,15 @@
-// create an array with our two pipelines
-pipelines = ["build-image", "another-pipeline"]
-
-// iterate through the array and call the create_pipeline method
-pipelines.each { pipeline ->
-    println "Creating pipeline "
-    create_pipeline(pipeline)
-}
-
-// a method that creates a basic pipeline with the given parameter name
-def create_pipeline(String name) {
-    pipelineJob(name) {
-        definition {
-            cps {
-                sandbox(true)
-                script("""
-// this is an example declarative pipeline that says hello and goodbye
-pipeline {
-    agent any
-    stages {
-        stage("Hello") {
-            steps {
-                echo "Hello from pipeline "
-            }
-        }
-        stage("Goodbye") {
-            steps {
-                echo "Goodbye from pipeline "
-            }
-        }
+job('seed_job') {
+  scm {
+    git {
+      remote {
+        url('https://github.com/fudongbai/jenkins.git')
+      }
+      branch('master')
     }
-}
-
-""")
-            }
-        }
+  }
+  steps {
+    dsl {
+      external('adduser.groovy')
     }
+  }
 }

@@ -1,10 +1,5 @@
 import jenkins.*
 import hudson.*
-import com.cloudbees.plugins.credentials.*
-import com.cloudbees.plugins.credentials.common.*
-import com.cloudbees.plugins.credentials.domains.*
-import com.cloudbees.jenkins.plugins.sshcredentials.impl.*
-import hudson.plugins.sshslaves.*;
 import hudson.model.*
 import jenkins.model.*
 import hudson.security.*
@@ -19,7 +14,7 @@ def instance = Jenkins.getInstance()
 instance.setSecurityRealm(hudsonRealm)
 instance.save()
 
-def strategy = new GlobalMatrixAuthorizationStrategy()
+def strategy = new hudson.security.GlobalMatrixAuthorizationStrategy()
 
 // Slave Permissions
 strategy.add(hudson.model.Computer.BUILD,'fudongbai')
@@ -28,13 +23,6 @@ strategy.add(hudson.model.Computer.CONNECT,'fudongbai')
 strategy.add(hudson.model.Computer.CREATE,'fudongbai')
 strategy.add(hudson.model.Computer.DELETE,'fudongbai')
 strategy.add(hudson.model.Computer.DISCONNECT,'fudongbai')
-
-// Credential Permissions
-strategy.add(com.cloudbees.plugins.credentials.CredentialsProvider.CREATE,'fudongbai')
-strategy.add(com.cloudbees.plugins.credentials.CredentialsProvider.DELETE,'fudongbai')
-strategy.add(com.cloudbees.plugins.credentials.CredentialsProvider.MANAGE_DOMAINS,'fudongbai')
-strategy.add(com.cloudbees.plugins.credentials.CredentialsProvider.UPDATE,'fudongbai')
-strategy.add(com.cloudbees.plugins.credentials.CredentialsProvider.VIEW,'fudongbai')
 
 // Overall Permissions
 strategy.add(hudson.model.Hudson.ADMINISTER,'fudongbai')

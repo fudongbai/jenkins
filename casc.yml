@@ -10,14 +10,14 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       permissions:
-        - "Overall/Administer:admin"
-        - "Overall/Read:authenticated"
-        - "Job/Build:dev"
-        - "Job/Cancel:dev"
-        - "Job/Read:dev"
-        - "Job/Workspace:dev"
-        - "Run/Replay:dev"
-        - "Run/Update:dev"
+        - "GROUP:Overall/Administer:admin"
+        - "GROUP:Overall/Read:authenticated"
+        - "GROUP:Job/Build:dev"
+        - "GROUP:Job/Cancel:dev"
+        - "GROUP:Job/Read:dev"
+        - "GROUP:Job/Workspace:dev"
+        - "GROUP:Run/Replay:dev"
+        - "GROUP:Run/Update:dev"
   remotingSecurity:
     enabled: true
 security:

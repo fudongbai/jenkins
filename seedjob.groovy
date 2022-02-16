@@ -1,3 +1,5 @@
+#!groovy
+
 job('seed_job') {
   scm {
     git {

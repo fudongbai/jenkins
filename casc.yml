@@ -10,14 +10,14 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       permissions:
-        - "GROUP:Overall/Administer:admin"
-        - "GROUP:Overall/Read:authenticated"
-        - "GROUP:Job/Build:dev"
-        - "GROUP:Job/Cancel:dev"
-        - "GROUP:Job/Read:dev"
-        - "GROUP:Job/Workspace:dev"
-        - "GROUP:Run/Replay:dev"
-        - "GROUP:Run/Update:dev"
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+        - "Job/Build:dev"
+        - "Job/Cancel:dev"
+        - "Job/Read:dev"
+        - "Job/Workspace:dev"
+        - "Run/Replay:dev"
+        - "Run/Update:dev"
   remotingSecurity:
     enabled: true
 security:
@@ -27,7 +27,7 @@ security:
         strategy: triggeringUsersAuthorizationStrategy
 unclassified:
   location:
-    url: http://23.94.104.70:8080/
+    url: http://192.168.1.106:8080/
 
 # specify the seedjob groovy script that will create the  pipelines for us
 jobs:

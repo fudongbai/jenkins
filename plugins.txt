@@ -13,6 +13,7 @@ mailer:latest
 matrix-auth:latest
 pam-auth:latest
 pipeline-stage-view:latest
+ssh-slave:latest
 timestamper:latest
 workflow-aggregator:latest
 workflow-cps:latest
